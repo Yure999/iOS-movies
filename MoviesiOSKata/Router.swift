@@ -11,9 +11,9 @@ import UIKit
 
 class Router{
     
-    var movieRepository:MovieRepository!
-    var moviePresenter: MoviePresenter!
-    var movieInteractor: MovieInteractor!
+    private var movieRepository:MovieRepository!
+    private var moviePresenter: MoviePresenter!
+    private var movieInteractor: MovieInteractor!
     
     init() {
         configureDependencies()
@@ -24,9 +24,10 @@ class Router{
         let viewController = moviesTableViewController(window)
         
         viewController.setMoviesPresenter(moviePresenter)
+        viewController.setRouter(self)
     }
     
-    func configureDependencies() {
+    private func configureDependencies() {
         movieRepository = DiskMovieRepository()
         moviePresenter = MoviePresenter(movieRepository: movieRepository)
         movieInteractor = MovieInteractor(moviePresenter: self.moviePresenter, movieRepository: self.movieRepository)

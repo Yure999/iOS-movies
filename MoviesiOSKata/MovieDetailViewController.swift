@@ -8,20 +8,13 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController{
 
     @IBOutlet weak var movieTitle: UILabel!
     
-    var movie: Movie?
+    var movie: Movie!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("detail viewcontroller")
-        setUI()
     }
-    
-    func setUI(){
-        movieTitle.text = movie?.title
-    }
-    
 }

@@ -13,6 +13,7 @@ import SDWebImage
 class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, MoviesView{
     
     var moviesPresenter:MoviePresenter!
+    var router:Router!
     var movies = [Movie]()
     
     @IBOutlet weak var moviesTableView: UITableView!
@@ -26,12 +27,16 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
     func setMoviesPresenter(_ moviesPresenter:MoviePresenter){
         self.moviesPresenter = moviesPresenter
     }
+    func setRouter(_ router:Router){
+        self.router = router
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         moviesTableView.tableFooterView = UIView()
-        moviesTableView.dataSource = self;
+        moviesTableView.dataSource = self
+        moviesTableView.delegate = self
         moviesTableView.allowsSelection = true
         
         moviesPresenter.attachView(view: self)
@@ -49,13 +54,12 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
         cell.movieTitleLabel.text = movie.title;
         cell.movieImageView.sd_setImage(with: URL(string: movie.image!))
         
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = movies[indexPath.row]
-        print("Cell selected")
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func showMovies(movies: [Movie]) -> Void{
