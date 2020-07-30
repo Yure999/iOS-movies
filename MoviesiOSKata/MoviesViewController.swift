@@ -32,9 +32,11 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
         
         moviesTableView.tableFooterView = UIView()
         moviesTableView.dataSource = self;
+        moviesTableView.allowsSelection = true
         
         moviesPresenter.attachView(view: self)
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
@@ -49,6 +51,11 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
         
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = movies[indexPath.row]
+        print("Cell selected")
     }
     
     func showMovies(movies: [Movie]) -> Void{

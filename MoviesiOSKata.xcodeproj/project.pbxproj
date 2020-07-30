@@ -24,6 +24,7 @@
 		155F0C541DCA82EF00CAA83B /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 155F0C531DCA82EF00CAA83B /* Movies.json */; };
 		155F0C561DCA832500CAA83B /* DiskMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155F0C551DCA832500CAA83B /* DiskMovieRepository.swift */; };
 		DC931631CB7F44226B86D725 /* Pods_MoviesiOSKata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011E3F33C2BB065A110A1CD7 /* Pods_MoviesiOSKata.framework */; };
+		DCBBC73C24D2DBCF00F29F43 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBBC73B24D2DBCF00F29F43 /* MovieDetailViewController.swift */; };
 		DCD141DA24D00BBC00C71E5B /* MovieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD141D924D00BBC00C71E5B /* MovieInteractor.swift */; };
 		DCD141DC24D011CD00C71E5B /* MoviePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD141DB24D011CD00C71E5B /* MoviePresenterProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		155F0C531DCA82EF00CAA83B /* Movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
 		155F0C551DCA832500CAA83B /* DiskMovieRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskMovieRepository.swift; sourceTree = "<group>"; };
 		A168145F045711F6ACBEC826 /* Pods-MoviesiOSKata.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesiOSKata.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoviesiOSKata/Pods-MoviesiOSKata.release.xcconfig"; sourceTree = "<group>"; };
+		DCBBC73B24D2DBCF00F29F43 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		DCD141D924D00BBC00C71E5B /* MovieInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInteractor.swift; sourceTree = "<group>"; };
 		DCD141DB24D011CD00C71E5B /* MoviePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePresenterProtocol.swift; sourceTree = "<group>"; };
 		EE1B99D9648E92A48912CD23 /* Pods-MoviesiOSKata.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesiOSKata.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoviesiOSKata/Pods-MoviesiOSKata.debug.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				153C0B6B1E23612E000B1B78 /* MoviesView.swift */,
 				1537F0041E1B9632005A0270 /* MovieTableViewCell.swift */,
 				1537F0061E1B9697005A0270 /* MoviesViewController.swift */,
+				DCBBC73B24D2DBCF00F29F43 /* MovieDetailViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				1537F0051E1B9632005A0270 /* MovieTableViewCell.swift in Sources */,
 				1510DE9D1DC9469C0039CD8F /* AppDelegate.swift in Sources */,
 				155F0C501DCA758700CAA83B /* Movie.swift in Sources */,
+				DCBBC73C24D2DBCF00F29F43 /* MovieDetailViewController.swift in Sources */,
 				153C0B6A1E2360C7000B1B78 /* MoviePresenter.swift in Sources */,
 				150FEDEA1DCE94F70022004A /* Router.swift in Sources */,
 				DCD141DA24D00BBC00C71E5B /* MovieInteractor.swift in Sources */,

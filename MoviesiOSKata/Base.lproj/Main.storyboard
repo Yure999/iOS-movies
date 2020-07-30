@@ -34,7 +34,7 @@
                                     <action selector="refreshClicked:" destination="Jes-As-63t" eventType="touchUpInside" id="H1c-Rw-Iim"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="272" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iTF-JT-Tty">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="272" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iTF-JT-Tty">
                                 <rect key="frame" x="0.0" y="121" width="375" height="546"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,6 +70,7 @@
                                             <outlet property="MovieTitleLabel" destination="hOt-VI-S8Y" id="K3P-j0-tlK"/>
                                             <outlet property="movieImageView" destination="GP4-9p-kla" id="kMO-PS-Lt1"/>
                                             <outlet property="movieTitleLabel" destination="hOt-VI-S8Y" id="Oqz-28-npF"/>
+                                            <segue destination="uFV-Sv-k2D" kind="show" identifier="ListToDetail" id="BMv-dF-PCa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -86,6 +87,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqf-kD-Th3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="978" y="75"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="jNg-Vd-3BF">
+            <objects>
+                <viewController id="uFV-Sv-k2D" customClass="MovieDetailViewController" customModule="MoviesiOSKata" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jn8-hC-KKP"/>
+                        <viewControllerLayoutGuide type="bottom" id="TqI-zt-mlx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Wv-Ig-Xnu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFm-6T-Gnb">
+                                <rect key="frame" x="137.5" y="94" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3bp-V0-aEH"/>
+                                    <constraint firstAttribute="height" constant="40" id="yaf-Nn-Oc4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fFm-6T-Gnb" firstAttribute="top" secondItem="Jn8-hC-KKP" secondAttribute="bottom" constant="50" id="0ZA-ZN-xCJ"/>
+                            <constraint firstItem="fFm-6T-Gnb" firstAttribute="centerX" secondItem="5Wv-Ig-Xnu" secondAttribute="centerX" id="4dn-H8-T5p"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bsc-xX-rcU"/>
+                    <connections>
+                        <outlet property="movieTitle" destination="fFm-6T-Gnb" id="CAn-BY-gVw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkH-4V-wVk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="73.313343328335833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="85j-zY-PRc">
