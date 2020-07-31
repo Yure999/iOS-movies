@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import SDWebImage
 
 class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, MoviesView{
@@ -15,6 +14,7 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
     var moviesPresenter:MoviePresenter!
     var router:Router!
     var movies = [Movie]()
+    let segueIdentifier = "ListToDetail"
     
     @IBOutlet weak var moviesTableView: UITableView!
     
@@ -42,6 +42,10 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
         moviesPresenter.attachView(view: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! MovieDetailViewController
+        destVC.movie = sender as? Movie
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
@@ -59,7 +63,7 @@ class MoviesViewController: UIViewController,UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = movies[indexPath.row]
-        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: segueIdentifier, sender: movie)
     }
     
     func showMovies(movies: [Movie]) -> Void{

@@ -7,6 +7,7 @@
 //
 
 class Movie {
-    var image:String?;
-    var title:String?;
+    var image:String?
+    var title:String?
+    var description:String?
 }

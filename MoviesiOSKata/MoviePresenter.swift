@@ -21,7 +21,6 @@ internal final class MoviePresenter: MoviePresenterProtocol{
     func attachRouter(router: Router){
         self.router = router
     }
-    
     func attachView(view: MoviesView){
         self.view = view
         movieInteractor.loadMovies()
@@ -33,11 +32,6 @@ internal final class MoviePresenter: MoviePresenterProtocol{
     
     func onRefreshAction(){
         movieInteractor.loadMovies()
-    }
-    
-    func onMovieClicked(){
-        //decirle al router que cambie de view
-        //pedirle al interactor los datos de la peli que se va a mostrar
     }
     
     internal func loadingMovies(){

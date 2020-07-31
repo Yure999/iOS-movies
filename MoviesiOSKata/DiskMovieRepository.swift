@@ -24,6 +24,7 @@ class DiskMovieRepository:MovieRepository {
                     let movie: Movie = Movie();
                     movie.title = moviejson["title"] as? String
                     movie.image = moviejson["image"] as? String
+                    movie.description = moviejson["description"] as? String
                     
                     movies.append(movie)
                 }
